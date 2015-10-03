@@ -6,7 +6,7 @@ create table tbl_homedata (
 	UNIQUE (propertyName),
 	Primary Key (code)) ENGINE = InnoDB;
 insert into tbl_homedata (propertyLabel,propertyName,propertyValue) values  
-('Site Title','siteTitle','site Title') , 
+('Site Title','siteTitle','Site Title') , 
 ('Site Heading Top','siteHeadingTop','Site Heading Top') ,
 ('Site Heading','siteHeading','Site Heading') ,
 ('Site Sub-Heading','siteSubHeading','Site Sub Heading') ,
