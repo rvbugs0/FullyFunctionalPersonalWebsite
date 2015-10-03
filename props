@@ -1,0 +1,47 @@
+siteTitle
+siteHeadingTop
+siteHeading
+siteSubHeading
+copyrightText
+contactSectionTitle
+officeAddressTitle
+officeAddress
+aboutSectionTitle
+aboutColumn1
+aboutColumn2
+socialMediaSectionTitle
+facebookLink
+googlePlusLink
+linkedInLink
+twitterLink
+
+create table tbl_portfolio (
+	code Int NOT NULL AUTO_INCREMENT,
+	name text ,
+	description text ,
+	image text ,
+	UNIQUE (code),
+	Primary Key (code)) ENGINE = InnoDB;
+
+
+
+
+
+portfolioTitle
+code
+image
+name
+description
+
+
+
+
+
+
+
+
+
+
+
+
+
