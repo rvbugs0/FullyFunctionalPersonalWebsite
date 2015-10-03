@@ -16,6 +16,8 @@ echo '<input type="text" class="form-control"  name="'.$row["propertyName"].'" v
     echo '<button type="submit" class="btn btn-success btn-lg myButton pull-right">Save</button>';
     echo "<br/>";
     echo "</form>";
+    $rs=null;
+    $c=null;
 }
 catch(Exception $exception)
 {
