@@ -1,7 +1,9 @@
 <?php
 require("functions.php");
 $target_dir = "img/logo/";
+
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
@@ -38,6 +40,7 @@ foreach($files as $file){ // iterate files
   if(is_file($file))
     unlink($file); // delete file
 }
+
 
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         redirect_to("CustomizeHome.php");
