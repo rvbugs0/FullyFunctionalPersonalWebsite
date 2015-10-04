@@ -1,9 +1,5 @@
-    <script src="lib/angular/angular.min.js" type="text/javascript"></script>
-    <script src="site-js/app.js" type="text/javascript"></script>
-    <script src="site-js/controllers.js" type="text/javascript"></script>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>

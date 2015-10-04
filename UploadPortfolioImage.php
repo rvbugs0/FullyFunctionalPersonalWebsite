@@ -6,7 +6,10 @@ $oldImage=$_POST["oldImage"];
 $target_dir = "img/portfolio/";
 
 
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+
+$target_file = $target_dir .uniqid(rand()) .basename($_FILES["fileToUpload"]["name"]);
+
+
 
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -40,7 +43,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
 
-echo $oldImage;
+
 if(file_exists($oldImage))
 {
     unlink($oldImage);

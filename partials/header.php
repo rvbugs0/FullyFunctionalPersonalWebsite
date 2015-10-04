@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <script src="lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="site-js/app.js" type="text/javascript"></script>
+    <script src="site-js/controllers.js" type="text/javascript"></script>
+        <!-- jQuery -->
+    <script src="js/jquery.js"></script>
     <title>{{homeData.siteTitle}}</title>
 
 

@@ -11,6 +11,25 @@ include_once("DAOException.php");
 class PortfolioDAO
  {
 
+public static function addPortfolio($portfolio) 
+{
+	try
+	{
+		$c=DatabaseConnection::getConnection();
+		$ps=$c->prepare("insert into tbl_portfolio (name,description ,image) values (?,?,?)");
+		$ps->bindParam(1,$portfolio->name);
+		$ps->bindParam(2,$portfolio->description);
+		$ps->bindParam(3,$portfolio->image);
+		$ps->execute();
+		$ps=null;
+		$c=null;
+		return true;
+	}catch(Exception $exception)
+	{
+		throw new DAOException("addPortfolio() ".$exception->getMessage());
+	}
+
+ }
 
 
 public static function updatePortfolio($portfolio) 
@@ -63,7 +82,12 @@ catch(Exception $exception)
 	try
 	{
 		$c=DatabaseConnection::getConnection();
+		$portfolio=self::getPortfolioByCode($code);
 		$c->query("delete from tbl_portfolio where code=$code");
+		if(file_exists($portfolio->image))
+		{
+			unlink($portfolio->image);
+		}
 		$c=null;
 	}
 catch(Exception $exception)

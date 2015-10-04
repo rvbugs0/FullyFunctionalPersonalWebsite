@@ -5,6 +5,8 @@ require("partials/header.php");
 
 <div class="table-responsive" style="padding-top:200px;margin-left:150px;width:70%; ">
 <h4>Portfolio</h4>
+<button class="btn btn-success btn-sm pull-right" data-target="#AddPortfolioModal" data-toggle="modal">Add Item </button>
+<br><br/>
 <table class="table table-striped table-bordered">
 	<thead>
 	<tr>
@@ -40,6 +42,41 @@ catch(Exception $exception)
 </tbody>
 </table>
 </div>
+
+<div class="portfolio-modal modal fade" id="AddPortfolioModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-offset-3 col-lg-6">
+                        <div class="modal-body">
+                            <form action="AddPortfolio.php" method="post" enctype="multipart/form-data" id="AddPortfolioForm">
+                            <label>Title</label>	
+                            <input class="form-control" type="text" name="portfolioName"  id="portfolioName" required>
+                            <label>Description</label>	
+                            <textarea rows=5 class="form-control" id="portfolioDescription" name="portfolioDescription" required></textarea>
+                            <hr class="star-primary">
+                            <label>Image</label>	
+                            <input type="file"  id="portfolioImage" name="portfolioImage" class="form-control" >	
+                            <br/>
+                            <button type="submit" id="AddPortfolioButton" class="btn btn-default" ><i class="fa fa-plus"></i> Add</button>
+                            </form>		
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 <?php
 include("partials/footer.php");
 ?>
