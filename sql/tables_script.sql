@@ -36,3 +36,12 @@ insert into tbl_portfolio (name , description,image) values ('Name 3', 'descript
 insert into tbl_portfolio (name , description,image) values ('Name 4', 'description of the folowing item','img/portfolio/4.png');
 insert into tbl_portfolio (name , description,image) values ('Name 5', 'description of the folowing item','img/portfolio/5.png');
 insert into tbl_portfolio (name , description,image) values ('Name 6', 'description of the folowing item','img/portfolio/6.png');
+create table tbl_user (
+	code Int NOT NULL AUTO_INCREMENT,
+	name text ,
+	username char(20)  ,
+	password char(100) ,
+	UNIQUE (code),
+	UNIQUE (username),
+	Primary Key (code)) ENGINE = InnoDB;
+insert into tbl_user (name,username,password ) values ('admin','admin',md5('admin'));

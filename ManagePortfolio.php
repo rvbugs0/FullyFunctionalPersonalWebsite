@@ -1,6 +1,12 @@
 <?php
-require("DatabaseConnection.php");
+require_once("DatabaseConnection.php");
+require_once("functions.php");
+if(!checkSession())
+{
+redirect_to("index.php");
+}
 require("partials/header.php");
+
 ?>
 
 <div class="table-responsive" style="padding-top:200px;margin-left:150px;width:70%; ">

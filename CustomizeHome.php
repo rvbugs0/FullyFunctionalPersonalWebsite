@@ -1,6 +1,12 @@
 <?php
-require("functions.php");
+require_once("functions.php");
+if(!checkSession())
+{
+redirect_to("index.php");
+}
+
 require("UIManager.php");
+
 $message="";
 $ar=  array();
 array_push($ar, 'siteTitle');
