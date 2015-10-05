@@ -68,6 +68,18 @@ redirect_to("InstallationForm.php");
                     <li class="page-scroll">
                         <a href="#contact">{{homeData.contactSectionTitle}}</a>
                     </li>
+                    <li class="page-scroll">
+                    <?php
+                    if(checkSession())
+                    {   
+                        echo "<a href=\"logout.php\">Logout</a>";
+                    }else
+                    {
+                        echo "<a href=\"login.php\">Login</a>";
+                    }
+
+                    ?>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

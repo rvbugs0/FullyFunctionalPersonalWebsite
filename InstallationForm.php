@@ -8,7 +8,7 @@
 <form id="installationForm" action="InstallTables.php" method="POST">
     <table>
         <tr>
-            <td>Server Name</td>
+            <td>Server IP</td>
 <td><input type="text" id="serverName" name="serverName"  maxlength="50" required></td>
         </tr>
         <tr>

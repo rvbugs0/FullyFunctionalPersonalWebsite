@@ -1,3 +1,7 @@
+<?php
+
+require_once("functions.php");
+?>
 <!DOCTYPE html>
 <html lang="en" ng-app="magnoApp" ng-controller="SiteDataController">
 <head >
@@ -61,10 +65,20 @@
                         <a href="index.php">Home</a>
                     </li>
                     <li class="page-scroll">
-                        <a href="ManagePortfolio.php">Portfolio Manager</a>
+                        <a href="admin.php">Admin Area</a>
                     </li>
+
                     <li class="page-scroll">
-                        <a href="CustomizeHome.php">Homepage Customizer</a>
+                    <?php
+                    if(checkSession())
+                    {   
+                        echo "<a href=\"logout.php\">Logout</a>";
+                    }else
+                    {
+                        echo "<a href=\"login.php\">Login</a>";
+                    }
+
+                    ?>
                     </li>
                 </ul>
             </div>
