@@ -14,7 +14,7 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
 		$user=new User();
 		$user->username=$_POST["username"];
 		$user->password=$_POST["password"];
-		if(UserDAO::validateUser($user))
+		if(UserDAO::validateUser($user)==true)
 		{
 			createSession($user->username);
 			redirect_to("index.php");

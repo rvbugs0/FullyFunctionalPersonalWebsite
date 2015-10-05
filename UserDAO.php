@@ -9,17 +9,26 @@ public static function validateUser($user)
 	try
 	{
 		$c=DatabaseConnection::getConnection();
-		$ps=$c->prepare("select * from tbl_user where username=? and password=?");
-		$ps->bindParam(1,$user->username);
 		$password=md5($user->password);
-		$ps->bindParam(2,$password);
-		$ps->execute();
-		$row=$ps->fetch(PDO::FETCH_ASSOC);
-		if($row)
+		$username=$user->username;
+		$rs=$c->query("select * from tbl_user where username='$username' and password='$password'");
+		$x=0;
+		foreach ($rs as $row ) 
 		{
-			return true;
+			$x++;
 		}
-		return false;
+		
+		
+		$rs=null;
+		$c=null;	
+		if($x>0)
+		{
+		return true;
+		}else
+		{
+		return false;			
+		}
+
 	}
 	catch(Exception $exception )
 	{
@@ -78,7 +87,8 @@ public static function changePassword($user)
 	{
 		$c=DatabaseConnection::getConnection();
 		$password=md5($user->password);
-		$ps=$c->prepare("update tbl_user set password='$password' where username = '$user->username'");
+		$username=$user->username;
+		$ps=$c->prepare("update tbl_user set password='$password' where username = '$username'");
 		$ps->execute();
 		$ps=null;
 		$c=null;

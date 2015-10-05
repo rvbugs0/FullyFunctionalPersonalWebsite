@@ -5,7 +5,6 @@ $message="";
 try
 {
 
-
 if(isset($_GET["status"]))
 {
 	$status=$_GET["status"];
@@ -35,9 +34,7 @@ redirect_to("admin.php?status=2");
 }
 else
 {
-	$user=new User();
-	$user->username=$_SESSION["username"];
-	$user->pasword=$_POST["newPassword"];
+	$user->password=$_POST["newPassword"];
 	UserDAO::changePassword($user);
 	redirect_to("admin.php?status=0");
 }
@@ -71,6 +68,7 @@ echo $user->name;
 <br/>
 <br/>
 <?php 
+
 if($_SESSION["username"]==='admin')
 {
 	echo '<a href="ManageAdmins.php" class="btn btn-warning btn-lg">Manage Administrators </a>';
