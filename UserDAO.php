@@ -71,6 +71,25 @@ public static function removeUser($code)
 	}
 }
 
+
+public static function changePassword($user)
+{
+	try
+	{
+		$c=DatabaseConnection::getConnection();
+		$password=md5($user->password);
+		$ps=$c->prepare("update tbl_user set password='$password' where username = '$user->username'");
+		$ps->execute();
+		$ps=null;
+		$c=null;
+		
+	}
+	catch(Exception $exception )
+	{
+		throw new DAOException("changePassword() -> ".$exception->getMessage());
+	}
+}
+
 public static function getAll()
 {
 	try

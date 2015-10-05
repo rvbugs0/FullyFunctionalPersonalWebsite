@@ -72,14 +72,17 @@ redirect_to("InstallationForm.php");
                     <?php
                     if(checkSession())
                     {   
-                        echo "<a href=\"logout.php\">Logout</a>";
+                        echo "<a href=\"logout.php\">Logout</a></li>";
+                        echo '<li class="page-scroll">';
+                        echo "<a href=\"admin.php\">Admin Area</a></li>";
+
                     }else
                     {
-                        echo "<a href=\"login.php\">Login</a>";
+                        echo "<a href=\"login.php\">Login</a></li>";
                     }
 
                     ?>
-                    </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -144,11 +147,14 @@ redirect_to("InstallationForm.php");
                 <div class="col-lg-4">
                     <p>{{homeData.aboutColumn2}}</p>
                 </div>
+                <!--
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="#" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Download PDF
                     </a>
                 </div>
+
+                -->
             </div>
         </div>
     </section>
